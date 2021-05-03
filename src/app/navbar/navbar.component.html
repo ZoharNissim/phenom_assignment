@@ -1,0 +1,19 @@
+<div class="navbar">
+  <div class="left">
+    <div class="logo"></div>
+    <div class="brand"> Phenom </div>
+  </div>
+
+  <div class="searchBox">
+    <div class="searchIcon"></div>
+    <input #input class="searchInput" type="text" [(ngModel)]="searchTerm" (input)="onInputChange()" />
+  </div>
+
+  <div class="right">
+    <div class="icon plus"></div>
+    <div class="icon alert"></div>
+    <div class="icon settings"></div>
+    <div class="icon view"></div>
+    <div class="userDetails"> Shira Levi <div class="icon arrow"></div> </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+.sidebar {
+    width: 56px;
+    height: calc(100vh - 56px);
+    background: #404040;
+    position: absolute;
+    top: 56px;
+}
+
+    .btnUp, .btnDown {
+        background: #A2A2A2;
+        width: 100%;
+        height: 24px;
+        border: none;
+        outline: none;
+        position: absolute;
+        background-image: url(../../assets/images/sidebar_arrow.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .btnDown {
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+
+    .itemsContainer {
+        height: calc(100% - 48px);
+        margin-top: 24px;
+        overflow: hidden;
+    }
+
+        .item {
+            height: 56px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .item.selected {
+            background-color: #525252;
+        }
+
+@media screen and (max-width: 500px) {
+    .sidebar {
+        display: none;
+    }
+}

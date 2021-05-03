@@ -1,0 +1,96 @@
+.header {
+    position: absolute;
+    top: 56px;
+    left: 56px;
+    width: calc(100% - 56px);
+    height: 150px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+}
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 0 35px;
+    }
+
+        .search {
+            display: flex;
+            align-items: center;
+            padding-top: 30px;
+            height: 80px;
+        }
+
+            .searchIcon {
+                width: 18px;
+                height: 18px;
+                background-image: url(../../assets/images/header_search.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-right: 20px;
+            }
+
+            .searchCount {
+                font-weight: 600;
+                margin-bottom: 2px;
+                font-size: 14px;
+                letter-spacing: 0.1px;
+                color: #4B6479;
+            }
+
+            .searchTerm {
+                height: 32px;
+                font-size: 24px;
+                font-weight: 400;
+                letter-spacing: 0.18px;
+                color: #4B6479;
+            }
+
+        .tabs {
+            height: 36px;
+            display: flex;
+            align-items: center;
+        }
+
+            .tab {
+                font-size: 14px;
+                line-height: 20px;
+                color: #4B6479;
+                padding: 0 16px;
+                font-weight: 400;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                border-bottom: 2px solid transparent;
+                cursor: pointer;
+            }
+
+            .tab.selected {
+                color: #01B2C0;
+                border-bottom: 2px solid #01B2C0;
+            }
+
+@media screen and (max-width: 670px) {
+    .tab {
+        display: none;
+    }
+
+    .tab.selected {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        left: 0;
+        width: 100%;
+        height: 110px;
+    }
+
+    .tabs {
+        display: none;
+    }
+}

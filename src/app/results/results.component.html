@@ -1,0 +1,34 @@
+<div class="results">
+  <div class="sortAndView">
+    <div class="sortSection">
+      <div class="sortTitle">Sort by</div>
+      <div class="dropdown" (click)="dropdownClicked()">
+        {{ sortByName ? 'Name' : 'Seniority' }}
+        <div class="sortArrow" [class.open]="sortOptionOpen"></div>
+      </div>
+
+      <div class="sortOptions" *ngIf="sortOptionOpen">
+        <button (click)="handleSort('name')">Name</button>
+        <button (click)="handleSort('seniority')">Seniority</button>
+      </div>
+    </div>
+
+    <div class="viewOptions">
+      <div class="viewIcon first"></div>
+      <div class="viewIcon second"></div>
+    </div>
+  </div>
+
+  <div class="cardsContainer" [class.padding]="areArraysEqual(data, filteredData)">
+    <app-candidate *ngFor="let candidate of filteredData"
+                   [candidate]="candidate" [searchTerm]="searchTerm" [id]="filteredData.indexOf(candidate)"
+                   (addToJob)="addToJobBtnClicked($event)">
+    </app-candidate>
+  </div>
+
+  <div class="seeMoreContainer" *ngIf="!areArraysEqual(data, filteredData)">
+    <button (click)="seeMoreBtnClicked()" class="seeMoreBtn">See More <div class="seeMoreIcon"></div> </button>
+  </div>
+
+  <app-modal *ngIf="modalOpen" (close)="closeModal()" [candidate]="selectedCandidate"></app-modal>
+</div>

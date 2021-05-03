@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="cardHeader">
+    <div class="image" [style.background-image]="'url(' + candidate.pictureUrl + ')'">
+      <div class="star" *ngIf="candidate.isFavourite"></div>
+    </div>
+    <div class="info">
+      <div class="name">
+        {{ candidate.firstName }} {{ candidate.lastName }}
+        <a class="linkedin" *ngIf="candidate.linkedInProfileURL" href="{{ candidate.linkedInProfileURL }}" target="_blank"></a>
+      </div>
+      <div class="location">
+        <div class="locationIcon"></div>
+        <div class="locationText">{{ candidate.location }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="section experience">
+      <div class="sectionTitle">
+        <div class="sectionIcon experience"></div>
+        <div class="sectionText ellipsis" title="" id="candidate{{id}}"
+             (ngChange)="handleEllipsis($event, candidate.currentCompany.jobTitle)" (mouseover)="handleEllipsis($event,  candidate.currentCompany.jobTitle)">
+          {{ candidate.currentCompany.jobTitle }}
+        </div>
+      </div>
+
+      <div class="sectionDetails">
+        <div class="border"></div>
+        <div>
+          <div class="sectionDetail firstLine ellipsis">{{ candidate.currentCompany.company }}</div>
+          <div class="sectionDetail">{{ handleDate(candidate.currentCompany.startDate) }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section education">
+      <div class="sectionTitle">
+        <div class="sectionIcon education"></div>
+        <div class="sectionText ellipsis" title=""
+             (ngChange)="handleEllipsis($event, candidate.highestEducation.universityName)" (mouseover)="handleEllipsis($event,  candidate.highestEducation.universityName)">
+          {{ candidate.highestEducation.universityName }}
+        </div>
+      </div>
+
+      <div class="sectionDetail education ellipsis" title=""
+           (ngChange)="handleEllipsis($event, candidate.highestEducation.fieldOfStudy)" (mouseover)="handleEllipsis($event, candidate.highestEducation.fieldOfStudy)">
+        {{ candidate.highestEducation.fieldOfStudy }}
+      </div>
+    </div>
+  </div>
+
+  <button class="addToJobBtn wobble-hor-bottom" (click)="addToJobBtnClicked()">Add to Job</button>
+</div>

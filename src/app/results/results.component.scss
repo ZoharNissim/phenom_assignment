@@ -1,0 +1,206 @@
+.results {
+    position: absolute;
+    top: 206px;
+    left: 56px;
+    width: calc(100% - 56px);
+    height: calc(100vh - 206px);
+    overflow: auto;
+    background: #f4f8f9;
+}
+
+.results::-webkit-scrollbar {
+    display: none;
+}
+
+    .sortAndView {
+        margin: 0 auto;
+        height: 48px;
+        margin-top: 12px;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .sortSection {
+            display: flex;
+            align-items: center;
+        }
+
+            .sortTitle, .dropdown {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 0.1px;
+                color: #4B6479;
+            }
+
+            .dropdown {
+                display: flex;
+                align-items: center;
+                font-weight: 400;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+
+            .sortArrow {
+                width: 12px;
+                height: 6px;
+                background-image: url(../../assets/images/sort_arrow.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin: 4px 0 0 8px;
+                transform: rotate(90deg);
+                transition: 0.4s;
+            }
+
+            .sortArrow.open {
+                transform: rotate(270deg);
+            }
+
+            .sortOptions {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: 56px;
+                margin-left: 34px;
+                width: 146px;
+                padding: 4px 0;
+                background: #FFFFFF;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+                border-radius: 2px;
+                z-index: 2;
+            }
+
+                .sortOptions button {
+                    height: 36px;
+                    width: 100%;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #4B6479;
+                    font-weight: 400;
+                    text-align: left;
+                    padding: 0 16px;
+                    cursor: pointer;
+                }
+
+                .sortOptions button:hover {
+                    background: #EDF9FA;
+                    color: #006770;
+                }
+
+        .viewOptions {
+            display: flex;
+            align-items: center;
+        }
+
+            .viewIcon {
+                width: 17px;
+                height: 13px;
+                background-image: url(../../assets/images/view_1.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                cursor: pointer;
+            }
+
+            .viewIcon.second {
+                background-image: url(../../assets/images/view_2.png);
+                margin-left: 10px;
+            
+            }
+
+    .cardsContainer {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        padding-left: 12px;
+    }
+
+    .cardsContainer.padding {
+        padding-bottom: 60px;
+    }
+
+    .seeMoreContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 38px 0 40px;
+    }
+
+        .seeMoreBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            outline: none;
+            background: none;
+            height: 24px;
+            letter-spacing: 0.1px;
+            color: #01B2C0;
+            margin: 20px 0;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 24px;
+            cursor: pointer;
+        }
+
+        .seeMoreIcon {
+            width: 10px;
+            height: 10px;
+            margin: 1px 0 0 10px;
+            background-image: url(../../assets/images/see_more.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+@media screen and (max-width: 500px) {
+    .results {
+        top: 166px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 166px);
+    }
+}
+
+@media only screen and (min-width: calc((7 * 338px) + (8 * 24px) + 60px)) {
+    .cardsContainer, .sortAndView {
+        width: calc((6 * 338px) + (7 * 24px));
+    }
+}
+
+@media only screen and (max-width: calc((6 * 338px) + (7 * 24px) + 60px)) {
+    .cardsContainer, .sortAndView {
+        width: calc((5 * 338px) + (6 * 24px));
+    }
+}
+
+@media only screen and (max-width: calc((5 * 338px) + (6 * 24px) + 60px)) {
+    .cardsContainer, .sortAndView {
+        width: calc((4 * 338px) + (5 * 24px));
+    }
+}
+
+@media only screen and (max-width: calc((4 * 338px) + (5 * 24px) + 60px)) {
+    .cardsContainer, .sortAndView {
+        width: calc((3 * 338px) + (4 * 24px));
+    }
+}
+
+@media only screen and (max-width: calc((3 * 338px) + (4 * 24px) + 60px)) {
+    .cardsContainer, .sortAndView {
+        width: calc((2 * 338px) + (3 * 24px));
+    }
+}
+
+@media only screen and (max-width: calc((2 * 338px) + (3 * 24px) + 60px)) {
+    .cardsContainer, .sortAndView {
+        width: calc((1 * 338px) + (2 * 24px));
+    }
+}

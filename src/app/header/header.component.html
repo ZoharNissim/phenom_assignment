@@ -1,0 +1,17 @@
+<div class="header">
+  <div class="content">
+    <div class="search">
+      <div class="searchIcon"></div>
+      <div class="searchDetails">
+        <div class="searchCount">{{ numOfResults }} results found</div>
+        <div class="searchTerm">{{ searchTerm }}</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab" *ngFor="let tab of tabs" [class.selected]="tab.title === 'Candidates'">
+        {{ tab.title }} ({{ tab.title === 'Candidates' ? numOfResults : tab.count }})
+      </div>
+    </div>
+  </div>
+</div>

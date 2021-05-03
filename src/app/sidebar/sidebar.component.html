@@ -1,0 +1,13 @@
+<div class="sidebar">
+  <button class="btnUp"></button>
+
+  <div class="itemsContainer">
+    <div *ngFor="let item of arr; let i = index;" class="item"
+          [style.background-image]="'url(../../assets/images/sidebar_item_' + (i + 1) + '.png)'"
+          [class.selected]="i === 0"
+    >
+    </div>
+  </div>
+
+  <button class="btnDown"></button>
+</div>
